@@ -1,0 +1,249 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* --------------- Modernized Variables ------------------ */
+:root {
+    --bg-dark: #090d16;          /* Deep rich space canvas tone */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;           /* High-contrast electric cyan */
+    --accent-glow: rgba(56, 189, 248, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --------------- Premium Glassmorphic Header ------------------ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(9, 13, 22, 0.45);
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6%; 
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+/* Targets the 'Let's Connect' button specifically via your existing markup structure */
+nav li:last-child a {
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.03);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
+}
+
+nav li:last-child a:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+/* --------------- Extended Main & Hero Layering -------------------- */
+main #hero {
+    min-height: 100vh;
+    padding: 0 24px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Ensures layout elements layer cleanly with micro text shadows to balance 3D contrast */
+#hero h1, 
+#hero p, 
+.cta-buttons {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    text-shadow: 0 2px 12px rgba(9, 13, 22, 0.5);
+}
+
+#hero h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    margin: 0 0 1.5rem 0;
+    background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero #cursor {
+    -webkit-text-fill-color: var(--accent);
+    font-weight: 300;
+    margin-left: 2px;
+    animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to { visibility: hidden; }
+}
+
+#hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 3rem 0;
+    max-width: 620px;
+    font-weight: 400;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#hero p.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------- Modernized CTA Buttons -------------------- */
+.cta-buttons {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.cta-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn1 {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+}
+
+.btn1:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.12);
+}
+
+.btn2 {
+    color: var(--text-main);
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.btn2:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* --------------- Background Canvas Vignette Shield -------------------- */
+.spline-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+/* Generates a smooth backdrop shield hiding the raw iframe limits */
+.spline-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at center, rgba(9, 13, 22, 0) 30%, rgba(9, 13, 22, 0.7) 80%),
+        linear-gradient(to bottom, transparent 85%, var(--bg-dark) 100%);
+    pointer-events: none; 
+}
+
+.spline-bg iframe {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: auto; /* Keeping mouse interaction active over your model */
+}
+
+/* --------------- Responsive Breakpoints -------------------- */
+@media (max-width: 992px) {
+    html { font-size: 15px; }
+    #hero h1 { font-size: 3.8rem; }
+}
+
+@media (max-width: 768px) {
+    header { padding: 1.25rem 5%; }
+    nav ul { gap: 1.5rem; }
+    /* Mobile optimization: hides middle links to prevent structural breaking */
+    nav ul li:not(:last-child) { display: none; } 
+    #hero h1 { font-size: 3rem; }
+    .cta-buttons { flex-direction: column; width: 100%; gap: 1rem; }
+    .cta-buttons a { width: 100%; }
+}
