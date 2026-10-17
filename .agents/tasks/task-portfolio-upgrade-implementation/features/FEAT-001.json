@@ -1,0 +1,25 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Replace the placeholder portfolio page with the approved static information architecture, conservative content, accessible project roots, and responsive Obsidian Minimalism presentation while preserving both existing Three.js mounts.",
+  "status": "completed",
+  "steps": [
+    "Modify d:\\Sem 06\\Web-Tech\\html practice\\portfolio\\index.html metadata, skip link, main ID, navigation order, semantic hamburger markup, static hero, About copy and preserved robot/fallback IDs, six Skills fallback groups, seven project roots/filter baseline, Education and certifications, in-main Contact, footer links, and exact supplied destinations. Keep all projects visible without static hidden attributes; omit Download CV, conditional education facts, skill chips, DevBoard highlights, non-DevBoard details, screenshots, fake links, and unsupported claims.",
+    "Modify d:\\Sem 06\\Web-Tech\\html practice\\portfolio\\fp.css by retaining variables, canvas/robot/fallback, focus, reduced motion, and responsive foundations; make #hero p statically visible; replace perspective deck rules with opaque featured/card/compact/detail/filter/skills/education styles and mobile layouts without bars, percentages, or excessive effects.",
+    "Run npm run build and inspect the static DOM/content against the exact design strings and seven-root/category requirements. Do not add the projects.js script until the module exists in FEAT-002."
+  ],
+  "acceptance_criteria": [
+    "The page has the exact title, meta/OG description, og:title, og:type, and relative og:image, with no og:url, favicon, CV action, or fake fragment.",
+    "Main order is hero, About, Skills, Projects, Education, Contact; the robot IDs and myPic.jpeg fallback remain present; unsupported education/about/availability claims are absent.",
+    "All seven project roots are present in initial HTML with stable IDs/categories, conservative supplied stacks/descriptions, opaque text-first presentation, DevBoard as the only featured project, and a native DevBoard View Details disclosure with zero highlights.",
+    "All six skill panels use Details available on request, education/certification names are present without unsupported metadata, and contact is inside main with exact required destinations.",
+    "npm run build passes and the CSS has no remaining old project deck behavior controlling the new project layout."
+  ],
+  "verification": [
+    "npm run build",
+    "Review index.html DOM order and exact content strings; confirm all seven roots and static no-JS content remain visible.",
+    "Review responsive CSS at 1024px, 768px, 480px, and 360px and confirm focus/reduced-motion rules remain present."
+  ],
+  "blocked_reason": null,
+  "findings": "No README, project documentation, evidence manifest, or CV/PDF exists in the checkout. Review correction applied: Personal Portfolio Website is All-only and only DevBoard may have details. FEAT-001 completed: index.html now contains the exact metadata and hero copy, skip link, semantic mobile navigation markup, main section order (Hero, About, Skills, Projects, Education, Contact), preserved #about-visual/#about-fallback-img/#about-canvas mounts, six fallback skill groups, seven static project roots with required IDs/categories, native DevBoard details with zero highlights, education/certification names, in-main contact destinations, and no CV/PDF action or conditional education facts. fp.css preserves the background/robot canvas, focus/reduced-motion foundations, and responsive breakpoints while replacing the old project deck with opaque responsive project, filter, skills, education, and details presentation. Verification: npm run build passed (Vite 5.4.21; existing non-fatal chunk-size warning only); git diff --check passed; git diff --stat and the full diff for index.html/fp.css were reviewed; static grep review confirmed seven roots, exact required strings, no prohibited claims, and no old deck selectors. Browser smoke checks were not run because no browser tool was available. Integration verification on iteration 1: npm run build passed with only the existing non-fatal chunk-size warning; git diff --check passed; the Vite source responded with HTTP 200 for /, /?no3d, and /?no-face; UTF-8 static assertions confirmed the seven project roots, no-JS fallback content, required destinations, and prohibited-link omissions; protected renderers/configuration were unchanged. Only index.html and fp.css are implementation changes; .agents/ remains pre-existing untracked workflow metadata. No projects.js script was added in FEAT-001, and preserved renderer/config/assets files were not changed."
+}
