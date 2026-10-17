@@ -1,0 +1,25 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Implement the focused safe hero typing/mobile navigation enhancement in fp.js and add projects.js for progressive project filtering and native details behavior, then wire the module once after fp.js.",
+  "status": "completed",
+  "steps": [
+    "Modify d:\\Sem 06\\Web-Tech\\html practice\\portfolio\\fp.js to use textContent on the dedicated rotating phrase, the four exact phrases, one owned moderate type/erase timer with reduced-motion/static fallback, stable visually-hidden Software Developer accessible name, aria-hidden rotating phrase/cursor, and no aria-live; also synchronize hamburger ARIA/inert state, mobile media changes, Escape/link close, and focus restoration without moving Three.js code.",
+    "Create d:\\Sem 06\\Web-Tech\\html practice\\portfolio\\projects.js with ready-state initialization, strict toolbar/control/root validation, fallback hiding only after success, delegated normalized-token filtering, hidden-property visibility/count status updates, Security no-match behavior, malformed-data All visibility, and native DevBoard-only details Escape/focus handling. Do not fetch evidence or infer content.",
+    "Add one /projects.js module script after /fp.js in d:\\Sem 06\\Web-Tech\\html practice\\portfolio\\index.html, then run the build and browser/no-JS smoke checks."
+  ],
+  "acceptance_criteria": [
+    "With JavaScript disabled or reduced motion enabled, the exact Software Developer hero phrase and supporting paragraph remain readable; normal motion uses one finite typing sequence with no unsafe insertion or missing-node failure.",
+    "The mobile menu is a real keyboard-operable button with synchronized aria-expanded/name, aria-controls, closed inert/optional aria-hidden state at mobile widths, Escape/link close, media-query transitions, and safe focus restoration.",
+    "projects.js reveals filters only after validation, keeps the fallback visible on initialization failure, preserves all roots for no-JS, sets exactly one aria-pressed filter, filters the seven roots by the approved mappings, counts unhidden roots, and reports Security no results.",
+    "DevBoard's native View Details remains usable without JavaScript; Escape closes an open details element and restores summary focus; no other project receives details or a fabricated action.",
+    "npm run build passes and hero3d.js, aboutRobot3d.js, and robot.js remain unchanged in purpose and source."
+  ],
+  "verification": [
+    "npm run build",
+    "Run npm run dev -- --host 127.0.0.1 and manually test normal render, ?no3d, ?no-face, reduced motion, mobile menu keyboard/focus behavior, no-JS baseline, all filter tokens, no-result Security, DevBoard details, contact links, and responsive widths; report unavailable browser checks.",
+    "Run git diff --check, review git diff --stat and the complete diff, and run git status --short --branch; confirm no intentional changes to hero3d.js, aboutRobot3d.js, robot.js, package files, vite.config.js, assets, or dist/."
+  ],
+  "blocked_reason": null,
+  "findings": "The approved design and review require a normal fallback paragraph in addition to noscript, no runtime evidence parsing, no non-DevBoard details, and focus movement out of a closed inert menu. FEAT-002 implementation is complete. npm run build and git diff --check pass. The Vite server responded successfully for source smoke verification; interactive browser checks were unavailable because no browser or Playwright executable is installed."
+}
