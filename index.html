@@ -4,202 +4,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front Page</title>
+    <title>Muhammad Awais Anwar — Software Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Muhammad Awais Anwar, an IT student building practical software systems, data tools, and web applications.">
+    <meta property="og:title" content="Muhammad Awais Anwar — Software Developer Portfolio">
+    <meta property="og:description" content="Portfolio of Muhammad Awais Anwar, an IT student building practical software systems, data tools, and web applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./myPic.jpeg">
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fp.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- Site-wide neural-network background (Three.js). Fixed, decorative, behind all content. -->
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <header>
         <div class="logo">_____.Dev</div>
-        <nav>
-            <ul>
+        <nav aria-label="Primary navigation">
+            <button class="hamburger" id="hamburger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="primary-navigation">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
-            <div class="hamburger" id="hamburger">
-                <!-- 3x spans for hamburger icon -->
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
-
     </header>
 
-    <main>
-
-        <!-- about section -->
-        <section id="hero">
-
-            <!-- <h1>Welcome To My Portfolio</h1> -->
-            <h1 id="typing-text"><span id="cursor">|</span></h1>
-            <p>Hi, I'm Awais. Here, I showcase what I built.</p>
+    <main id="main-content">
+        <section id="hero" aria-labelledby="hero-title">
+            <h1 id="hero-title">
+                <span class="visually-hidden">Software Developer</span>
+                <span id="typing-text" aria-hidden="true">Software Developer</span><span id="cursor" aria-hidden="true">|</span>
+            </h1>
+            <p>Building practical software systems, data tools, and reliable web applications.</p>
 
             <div class="cta-buttons">
-                <a href="#projects" class="btn1">View My Work</a>
-                <a href="#contact" class="btn2">Let's Connect</a>
-                <a href="#hero" id="up">↑</a>
+                <a href="#projects" class="btn1">View Projects</a>
+                <a href="#hero" id="up" aria-label="Back to top">↑</a>
             </div>
         </section>
 
-        <section id="about">
+        <section id="about" aria-labelledby="about-title">
             <div class="about-container">
-
                 <div class="about-img" id="about-visual">
                     <!-- Fallback portrait: shown if WebGL/3D fails or is disabled. -->
-                    <img src="myPic.jpeg" alt="Awais's Image" id="about-fallback-img">
+                    <img src="myPic.jpeg" alt="Portrait of Muhammad Awais Anwar" id="about-fallback-img">
                     <!-- 3D synthetic-intelligence face. Decorative; sits over the fallback. -->
                     <canvas id="about-canvas" aria-hidden="true"></canvas>
                 </div>
 
                 <div class="about-content">
-
-                    <div class="status-badge s1">
-                        <span class="pulse-dot d1"></span>
-                        Available for internships & roles
-                    </div>
-
-                    <h2>About Me</h2>
-                    <p class="about-bio">
-                        I am a focused IT student driven by a deep fascination for system mechanics, low-level
-                        efficiency, and clean interfaces. I specialize in designing structured, secure digital systems
-                        from the network architecture level up to the user interface.
-                    </p>
+                    <p class="eyebrow">About</p>
+                    <h2 id="about-title">Building with purpose</h2>
+                    <p class="about-bio">I am an IT student interested in software development, practical applications, data tools, and cybersecurity. I enjoy turning ideas into structured, useful software while continuing to build a strong technical foundation.</p>
 
                     <div class="about-stat">
                         <div class="stat-card">
-                            <h3>Current Degree</h3>
-                            <p>BS Information Technology (Batch 2023 - 2027)</p>
+                            <h3>Education</h3>
+                            <p>BS Information Technology</p>
                         </div>
                         <div class="stat-card">
-                            <h3>Academic Standing</h3>
-                            <p>6th Semester | Maintaining a strong CGPA</p>
+                            <h3>Focus</h3>
+                            <p>Software development and practical applications</p>
                         </div>
                         <div class="stat-card">
-                            <h3>Technical Passion</h3>
-                            <p>Network Administration, System Architecture, & Low-Level Programming</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Experience</h3>
-                            <p>Worked on different projects in Python / C++ & Web Development</p>
+                            <h3>Interests</h3>
+                            <p>Data tools and cybersecurity</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section id="projects">
+        <section id="skills" class="section-shell" aria-labelledby="skills-title">
+            <div class="section-heading">
+                <p class="eyebrow">Capabilities</p>
+                <h2 id="skills-title">Skills</h2>
+                <p>Technical areas I am developing through practical work and continued learning.</p>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-group">
+                    <h3>Languages</h3>
+                    <p>Details available on request</p>
+                </article>
+                <article class="skill-group">
+                    <h3>Web Development</h3>
+                    <p>Details available on request</p>
+                </article>
+                <article class="skill-group">
+                    <h3>Databases</h3>
+                    <p>Details available on request</p>
+                </article>
+                <article class="skill-group">
+                    <h3>Data &amp; Computer Vision</h3>
+                    <p>Details available on request</p>
+                </article>
+                <article class="skill-group">
+                    <h3>Tools &amp; Practices</h3>
+                    <p>Details available on request</p>
+                </article>
+                <article class="skill-group">
+                    <h3>Cybersecurity</h3>
+                    <p>Details available on request</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="section-shell" aria-labelledby="projects-title">
+            <div class="section-heading">
+                <p class="eyebrow">Selected work</p>
+                <h2 id="projects-title">Projects</h2>
+                <p>Practical software systems, data tools, and experiments presented with conservative project context.</p>
+            </div>
+
+            <div id="project-filters" class="project-filters" hidden aria-label="Project filters">
+                <button type="button" class="filter-button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-button" data-filter="full-stack" aria-pressed="false">Full Stack</button>
+                <button type="button" class="filter-button" data-filter="data" aria-pressed="false">Data</button>
+                <button type="button" class="filter-button" data-filter="desktop" aria-pressed="false">Desktop</button>
+                <button type="button" class="filter-button" data-filter="cpp" aria-pressed="false">C++</button>
+                <button type="button" class="filter-button" data-filter="security" aria-pressed="false">Security</button>
+            </div>
+            <p id="project-filter-status" class="project-filter-status" aria-live="polite"></p>
+            <p id="project-filter-fallback" class="project-filter-fallback">Project filters require JavaScript; all projects are shown.</p>
+            <noscript><p class="project-filter-fallback">Project filters require JavaScript; all projects are shown.</p></noscript>
+
+            <div id="project-list">
+                <article class="project-featured" data-project-id="devboard" data-categories="full-stack">
+                    <div class="project-featured-visual" aria-hidden="true">
+                        <span class="visual-label">DEV / BOARD</span>
+                        <span class="visual-line"></span>
+                        <span class="visual-line visual-line-short"></span>
+                        <span class="visual-block"></span>
+                    </div>
+                    <div class="project-featured-content">
+                        <p class="project-label">FEATURED</p>
+                        <h3>DevBoard — Personal Developer Dashboard</h3>
+                        <p>A Flask dashboard for managing projects, tasks, learning progress, and development notes.</p>
+                        <ul class="tech-list" aria-label="DevBoard technology stack">
+                            <li class="tech-chip">Python</li>
+                            <li class="tech-chip">Flask</li>
+                            <li class="tech-chip">SQLite</li>
+                            <li class="tech-chip">Jinja</li>
+                            <li class="tech-chip">Chart.js</li>
+                            <li class="tech-chip">pytest</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a class="project-action" href="https://github.com/AAKING333/devboard" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <details class="project-details">
+                            <summary>View Details</summary>
+                            <div class="project-details__content">
+                                <p>A Flask dashboard for managing projects, tasks, learning progress, and development notes.</p>
+                                <p><strong>Stack:</strong> Python, Flask, SQLite, Jinja, Chart.js, pytest.</p>
+                                <p>Additional implementation highlights are not verified in the available project evidence.</p>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <div class="project-grid">
+                    <article class="project-card" data-project-id="crime-pattern-prediction" data-categories="data">
+                        <p class="project-label">DATA</p>
+                        <h3>Crime Pattern Prediction and Visualization System</h3>
+                        <p>A Streamlit system for processing crime data, exploring patterns and trends, and presenting interactive visualizations.</p>
+                        <ul class="tech-list" aria-label="Crime Pattern Prediction technology stack">
+                            <li class="tech-chip">Python</li>
+                            <li class="tech-chip">Streamlit</li>
+                            <li class="tech-chip">Pandas</li>
+                            <li class="tech-chip">NumPy</li>
+                            <li class="tech-chip">Scikit-learn</li>
+                            <li class="tech-chip">Plotly</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card" data-project-id="contoso-restaurant" data-categories="desktop">
+                        <p class="project-label">DESKTOP</p>
+                        <h3>Contoso Restaurant Management System</h3>
+                        <p>A Windows Forms restaurant management application built with C# and MySQL.</p>
+                        <ul class="tech-list" aria-label="Contoso Restaurant technology stack">
+                            <li class="tech-chip">C#</li>
+                            <li class="tech-chip">.NET Windows Forms</li>
+                            <li class="tech-chip">MySQL</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card" data-project-id="student-grade-management" data-categories="cpp">
+                        <p class="project-label">C++</p>
+                        <h3>Student Grade Management System</h3>
+                        <p>A C++ project focused on object-oriented programming and file handling.</p>
+                        <ul class="tech-list" aria-label="Student Grade Management technology stack">
+                            <li class="tech-chip">C++</li>
+                            <li class="tech-chip">Object-oriented programming</li>
+                            <li class="tech-chip">File handling</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card" data-project-id="url-shortener" data-categories="desktop">
+                        <p class="project-label">DESKTOP</p>
+                        <h3>URL Shortener</h3>
+                        <p>A desktop URL shortener built with Python, Tkinter, and PyShorteners.</p>
+                        <ul class="tech-list" aria-label="URL Shortener technology stack">
+                            <li class="tech-chip">Python</li>
+                            <li class="tech-chip">Tkinter</li>
+                            <li class="tech-chip">PyShorteners</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="additional-work">
+                    <div class="section-heading section-heading-small">
+                        <p class="eyebrow">Additional work</p>
+                        <h3>Experiments and practice</h3>
+                    </div>
+                    <div class="project-grid project-grid-compact">
+                        <article class="project-card project-card--compact" data-project-id="computer-vision-experiments" data-categories="data">
+                            <p class="project-label">DATA</p>
+                            <h3>Computer Vision Experiments</h3>
+                            <p>A set of Python and OpenCV experiments for exploring computer vision workflows.</p>
+                            <ul class="tech-list" aria-label="Computer Vision Experiments technology stack">
+                                <li class="tech-chip">Python</li>
+                                <li class="tech-chip">OpenCV</li>
+                            </ul>
+                        </article>
+                        <article class="project-card project-card--compact" data-project-id="personal-portfolio" data-categories="all">
+                            <p class="project-label">PORTFOLIO</p>
+                            <h3>Personal Portfolio Website</h3>
+                            <p>A portfolio website built with HTML5, CSS3, JavaScript, Vite, and Three.js.</p>
+                            <ul class="tech-list" aria-label="Personal Portfolio technology stack">
+                                <li class="tech-chip">HTML5</li>
+                                <li class="tech-chip">CSS3</li>
+                                <li class="tech-chip">JavaScript</li>
+                                <li class="tech-chip">Vite</li>
+                                <li class="tech-chip">Three.js</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section-shell" aria-labelledby="education-title">
+            <div class="section-heading">
+                <p class="eyebrow">Background</p>
+                <h2 id="education-title">Education &amp; Certifications</h2>
+            </div>
+            <div class="education-layout">
+                <article class="education-entry">
+                    <p class="project-label">EDUCATION</p>
+                    <h3>BS Information Technology</h3>
+                </article>
+                <div>
+                    <h3 class="subsection-title">Certifications</h3>
+                    <ul class="certification-list">
+                        <li class="certification-item">OPSWAT Cybersecurity Fundamentals Associate</li>
+                        <li class="certification-item">Introduction to Critical Infrastructure Protection</li>
+                        <li class="certification-item">Mastercard Cybersecurity Job Simulation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
             <div class="container">
+                <div class="info">
+                    <p class="eyebrow">Contact</p>
+                    <h2 id="contact-title">Get In Touch</h2>
+                    <p>For project questions, collaboration, or professional contact, use one of the channels below.</p>
+                </div>
 
-                <h2>Projects</h2>
-
-                <div class="item item1">
-                    <img src="i1.jpg" alt="">
-                    <h4>First Image</h4>
-                    <p>This is the image number 01</p>
-                </div>
-                <div class="item item2">
-                    <img src="i2.jpg" alt="">
-                    <h4>Second Image</h4>
-                    <p>This is the image number 02</p>
-                </div>
-                <div class="item item3">
-                    <img src="i3.jpg" alt="">
-                    <h4>Third Image</h4>
-                    <p>This is the image number 03</p>
-                </div>
-                <div class="item item4">
-                    <img src="i4.jpg" alt="">
-                    <h4>Fourth Image</h4>
-                    <p>This is the image number 04</p>
-                </div>
-                <div class="item item5">
-                    <img src="i5.jpg" alt="">
-                    <h4>Fifth Image</h4>
-                    <p>This is the image number 05</p>
+                <div class="grid">
+                    <a href="mailto:zali40868@gmail.com" class="card">
+                        <div class="icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
+                        <div class="content">
+                            <h3>Email</h3>
+                            <p>zali40868@gmail.com</p>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammad-awais-24b36131/" class="card" target="_blank" rel="noopener noreferrer">
+                        <div class="icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
+                        <div class="content">
+                            <h3>LinkedIn</h3>
+                            <p>Connect professionally</p>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                    </a>
+                    <a href="https://github.com/AAKING333" class="card" target="_blank" rel="noopener noreferrer">
+                        <div class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+                        <div class="content">
+                            <h3>GitHub</h3>
+                            <p>View repositories</p>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                    </a>
+                    <a href="tel:+923350504564" class="card">
+                        <div class="icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                        <div class="content">
+                            <h3>Telephone</h3>
+                            <p>+92 335 504 0564</p>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                    </a>
+                    <a href="https://wa.me/923350504564" class="card" target="_blank" rel="noopener noreferrer">
+                        <div class="icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+                        <div class="content">
+                            <h3>WhatsApp</h3>
+                            <p>Send a message</p>
+                        </div>
+                        <div class="arrow" aria-hidden="true">↗</div>
+                    </a>
                 </div>
             </div>
         </section>
-
     </main>
-
-    <section id="contact">
-        <div class="container">
-            <div class="info">
-                <h2>Get In Touch</h2>
-                <p>I am currently looking for internship opportunities and collaborative projects. Whether you have a
-                    question or just want to say hi, my inbox is always open!</p>
-
-                <div class="status-badge s2">
-                    <span class="pulse-dot d2"></span>
-                    Available for Work
-                </div>
-            </div>
-
-            <div class="grid">
-
-                <a href="mailto:zali40868@gmail.com" class="card">
-                    <div class="icon"><i class="fa-regular fa-envelope"></i></div>
-                    <div class="content">
-                        <h3>Email Me</h3>
-                        <p>zali40868@gmail.com</p>
-                    </div>
-                    <div class="arrow">↗</div>
-                </a>
-
-                <a href="https://www.linkedin.com/in/muhammad-awais-24b36131b?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" class="card" target="_blank" rel="noopener noreferrer">
-                    <div class="icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                    <div class="content">
-                        <h3>LinkedIn</h3>
-                        <p>Let's connect professionally</p>
-                    </div>
-                    <div class="arrow">↗</div>
-                </a>
-
-                <a href="https://github.com/AAKING333" class="card" target="_blank" rel="noopener noreferrer">
-                    <div class="icon"><i class="fa-brands fa-github"></i></div>
-                    <div class="content">
-                        <h3>GitHub</h3>
-                        <p>Check out my repositories</p>
-                    </div>
-                    <div class="arrow">↗</div>
-                </a>
-
-                <a href="https://wa.me/923350504564" class="card" target="_blank" rel="noopener noreferrer">
-                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
-                    <div class="content">
-                        <h3>Call / WhatsApp</h3>
-                        <p>Let's conversate & decide</p>
-                    </div>
-                    <div class="arrow">↗</div>
-                </a>
-
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="f-container">
             <p class="copyright">&copy; 2026. All rights reserved.</p>
-
             <div class="f-links">
                 <a href="#hero">Home</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
