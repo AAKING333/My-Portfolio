@@ -17,6 +17,9 @@
 </head>
 
 <body>
+    <!-- Site-wide neural-network background (Three.js). Fixed, decorative, behind all content. -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
     <header>
         <div class="logo">_____.Dev</div>
         <nav>
@@ -41,10 +44,6 @@
 
         <!-- about section -->
         <section id="hero">
-            <!-- <div class="spline-bg">
-                <iframe src='https://my.spline.design/untitled-WSaVgxdVk7NUDpoU9REOWeQc/' frameborder='0' width='100%'
-                    height='100%'></iframe>
-            </div> -->
 
             <!-- <h1>Welcome To My Portfolio</h1> -->
             <h1 id="typing-text"><span id="cursor">|</span></h1>
@@ -60,8 +59,11 @@
         <section id="about">
             <div class="about-container">
 
-                <div class="about-img">
-                    <img src="myPic.jpeg" alt="Awais's Image">
+                <div class="about-img" id="about-visual">
+                    <!-- Fallback portrait: shown if WebGL/3D fails or is disabled. -->
+                    <img src="myPic.jpeg" alt="Awais's Image" id="about-fallback-img">
+                    <!-- 3D synthetic-intelligence face. Decorative; sits over the fallback. -->
+                    <canvas id="about-canvas" aria-hidden="true"></canvas>
                 </div>
 
                 <div class="about-content">
@@ -151,7 +153,7 @@
 
             <div class="grid">
 
-                <a href="#mail" class="card">
+                <a href="mailto:zali40868@gmail.com" class="card">
                     <div class="icon"><i class="fa-regular fa-envelope"></i></div>
                     <div class="content">
                         <h3>Email Me</h3>
@@ -160,7 +162,7 @@
                     <div class="arrow">↗</div>
                 </a>
 
-                <a href="#linkedin" class="card">
+                <a href="https://www.linkedin.com/in/muhammad-awais-24b36131b?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="icon"><i class="fa-brands fa-linkedin-in"></i></div>
                     <div class="content">
                         <h3>LinkedIn</h3>
@@ -169,7 +171,7 @@
                     <div class="arrow">↗</div>
                 </a>
 
-                <a href="github" class="card">
+                <a href="https://github.com/AAKING333" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="icon"><i class="fa-brands fa-github"></i></div>
                     <div class="content">
                         <h3>GitHub</h3>
@@ -178,7 +180,7 @@
                     <div class="arrow">↗</div>
                 </a>
 
-                <a href="phone" class="card">
+                <a href="https://wa.me/923350504564" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="icon"><i class="fa-solid fa-phone"></i></div>
                     <div class="content">
                         <h3>Call / WhatsApp</h3>
@@ -204,6 +206,8 @@
     </footer>
 
     <script type="module" src="/fp.js"></script>
+    <script type="module" src="/hero3d.js"></script>
+    <script type="module" src="/aboutRobot3d.js"></script>
 </body>
 
 </html>

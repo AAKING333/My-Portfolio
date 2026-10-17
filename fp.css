@@ -218,10 +218,32 @@ main #hero {
     /* Subtle violet halo kept faint, leaving room for a future 3D centerpiece */
     background:
         radial-gradient(circle at 50% 42%, rgba(139, 92, 246, 0.10) 0%, transparent 55%),
-        radial-gradient(circle at center, rgba(24, 24, 34, 0.6) 0%, var(--bg-dark) 72%);
+        radial-gradient(circle at center, rgba(24, 24, 34, 0.35) 0%, transparent 72%);
 }
 
-/* Keep hero content above any future background layer */
+
+/* Site-wide neural-network background: ONE fixed canvas behind all content.
+   z-index:-1 paints above the root background but below every in-flow element,
+   so the translucent section backgrounds below let the network show through. */
+#bg-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    display: block;
+    /* Hidden until the module initializes, so a plain dark page shows if WebGL fails. */
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+#bg-canvas.is-active {
+    /* --bg-fade is set from JS: 1 at the hero, easing to ~0.6 over content sections. */
+    opacity: var(--bg-fade, 1);
+}
+
+/* Keep hero content above the particle-field background layer */
 #hero h1,
 #hero p,
 #hero .cta-buttons {
@@ -355,7 +377,7 @@ main #hero {
 
 #about {
     min-height: 100vh;
-    background-color: var(--bg-secondary);
+    background-color: rgba(18, 18, 26, 0.25);
     padding: 6rem 5%;
     box-sizing: border-box;
     display: flex;
@@ -406,6 +428,50 @@ main #hero {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.45),
         0 10px 10px -5px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-subtle);
+}
+
+/* ---- About 3D synthetic-intelligence face ---- */
+/* The container defines the portrait box; the image and canvas overlap in it. */
+#about-visual {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    /* Portrait 3:4 box so the 3D framing matches a portrait photo. */
+    aspect-ratio: 3 / 4;
+}
+
+/* In 3D mode the box drives sizing, so the fallback image fills the box. */
+#about-visual #about-fallback-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    transition: opacity 0.6s ease;
+}
+
+#about-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+    border-radius: var(--radius-lg);
+    /* Transparent so the page background shows through; revealed on success. */
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none; /* let page scroll/gestures pass through; we track globally */
+}
+
+/* When the 3D face initializes successfully: reveal canvas, fade out the photo. */
+#about-visual.robot-active #about-canvas {
+    opacity: 1;
+}
+
+#about-visual.robot-active #about-fallback-img {
+    opacity: 0;
 }
 
 .about-content {
@@ -520,7 +586,7 @@ main #hero {
     /* height: 100vh; */
     width: 100%;
     /* background-color: var(--bg-third); */
-    background: radial-gradient(circle at center, rgba(24, 24, 34, 0.6) 0%, var(--bg-dark) 72%);
+    background: radial-gradient(circle at center, rgba(24, 24, 34, 0.35) 0%, transparent 72%);
     padding: 6rem 5%;
     box-sizing: border-box;
     perspective: 1200px;
@@ -645,7 +711,7 @@ main #hero {
 #contact {
     min-height: 100vh;
     width: 100%;
-    background-color: var(--bg-secondary);
+    background-color: rgba(18, 18, 26, 0.25);
     padding: 8rem 10%;
     box-sizing: border-box;
     display: flex;
@@ -790,7 +856,7 @@ footer {
     width: 100%;
     padding: 2.5rem 10%;
     box-sizing: border-box;
-    background: var(--bg-secondary);
+    background: rgba(18, 18, 26, 0.45);
     border-top: 1px solid var(--border-subtle);
 }
 
@@ -940,6 +1006,10 @@ footer .f-links a:focus-visible {
     }
 
     .about-img img {
+        max-width: 250px;
+    }
+
+    #about-visual {
         max-width: 250px;
     }
 
@@ -1102,6 +1172,10 @@ footer .f-links a:focus-visible {
     
     .about-img img {
         max-width: 200px;
+    }
+
+    #about-visual {
+        max-width: 220px;
     }
     
     .about-content h2 {
