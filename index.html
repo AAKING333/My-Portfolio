@@ -24,7 +24,7 @@
     <!-- Site-wide neural-network background (Three.js). Fixed, decorative, behind all content. -->
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <header>
+    <header data-site-header>
         <div class="logo">_____.Dev</div>
         <nav aria-label="Primary navigation">
             <button class="hamburger" id="hamburger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
@@ -32,33 +32,36 @@
                 <span></span>
                 <span></span>
             </button>
-            <ul id="primary-navigation">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul id="primary-navigation" data-primary-navigation>
+                <li><a href="#hero" data-nav-link aria-current="page">Home</a></li>
+                <li><a href="#about" data-nav-link>About</a></li>
+                <li><a href="#skills" data-nav-link>Skills</a></li>
+                <li><a href="#projects" data-nav-link>Projects</a></li>
+                <li><a href="#education" data-nav-link>Education</a></li>
+                <li><a href="#contact" data-nav-link>Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main-content">
-        <section id="hero" aria-labelledby="hero-title">
-            <h1 id="hero-title">
+        <section id="hero" data-nav-section="hero" aria-labelledby="hero-title">
+            <h1 id="hero-title" data-reveal>
                 <span class="visually-hidden">Software Developer</span>
-                <span id="typing-text" aria-hidden="true">Software Developer</span><span id="cursor" aria-hidden="true">|</span>
+                <span class="typing-frame" aria-hidden="true">
+                    <span class="typing-measure" aria-hidden="true">Developing Secure Web Applications</span>
+                    <span class="typing-output"><span id="typing-text" aria-hidden="true">Software Developer</span><span id="cursor" aria-hidden="true">|</span></span>
+                </span>
             </h1>
-            <p>Building practical software systems, data tools, and reliable web applications.</p>
+            <p data-reveal>Building practical software systems, data tools, and reliable web applications.</p>
 
-            <div class="cta-buttons">
+            <div class="cta-buttons" data-reveal>
                 <a href="#projects" class="btn1">View Projects</a>
                 <a href="#hero" id="up" aria-label="Back to top">↑</a>
             </div>
         </section>
 
-        <section id="about" aria-labelledby="about-title">
-            <div class="about-container">
+        <section id="about" data-nav-section="about" aria-labelledby="about-title">
+            <div class="about-container" data-reveal>
                 <div class="about-img" id="about-visual">
                     <!-- Fallback portrait: shown if WebGL/3D fails or is disabled. -->
                     <img src="myPic.jpeg" alt="Portrait of Muhammad Awais Anwar" id="about-fallback-img">
@@ -66,21 +69,21 @@
                     <canvas id="about-canvas" aria-hidden="true"></canvas>
                 </div>
 
-                <div class="about-content">
+                <div class="about-content" data-reveal>
                     <p class="eyebrow">About</p>
                     <h2 id="about-title">Building with purpose</h2>
                     <p class="about-bio">I am an IT student interested in software development, practical applications, data tools, and cybersecurity. I enjoy turning ideas into structured, useful software while continuing to build a strong technical foundation.</p>
 
                     <div class="about-stat">
-                        <div class="stat-card">
+                        <div class="stat-card" data-reveal>
                             <h3>Education</h3>
                             <p>BS Information Technology</p>
                         </div>
-                        <div class="stat-card">
+                        <div class="stat-card" data-reveal>
                             <h3>Focus</h3>
                             <p>Software development and practical applications</p>
                         </div>
-                        <div class="stat-card">
+                        <div class="stat-card" data-reveal>
                             <h3>Interests</h3>
                             <p>Data tools and cybersecurity</p>
                         </div>
@@ -89,43 +92,102 @@
             </div>
         </section>
 
-        <section id="skills" class="section-shell" aria-labelledby="skills-title">
-            <div class="section-heading">
+        <section id="skills" class="section-shell" data-nav-section="skills" aria-labelledby="skills-title">
+            <div class="section-heading" data-reveal>
                 <p class="eyebrow">Capabilities</p>
                 <h2 id="skills-title">Skills</h2>
                 <p>Technical areas I am developing through practical work and continued learning.</p>
             </div>
 
             <div class="skills-grid">
-                <article class="skill-group">
+                <article class="skill-group" data-reveal>
                     <h3>Languages</h3>
-                    <p>Details available on request</p>
+                    <ul class="skill-list" aria-label="Languages">
+                        <li class="skill-chip">C</li>
+                        <li class="skill-chip">C++</li>
+                        <li class="skill-chip">Python</li>
+                        <li class="skill-chip">JavaScript</li>
+                        <li class="skill-chip">Rust</li>
+                    </ul>
                 </article>
-                <article class="skill-group">
+                <article class="skill-group" data-reveal>
                     <h3>Web Development</h3>
-                    <p>Details available on request</p>
+                    <ul class="skill-list" aria-label="Web Development skills">
+                        <li class="skill-chip">HTML5</li>
+                        <li class="skill-chip">CSS3</li>
+                        <li class="skill-chip">JavaScript ES6+</li>
+                        <li class="skill-chip">MERN Stack</li>
+                        <li class="skill-chip">MongoDB</li>
+                        <li class="skill-chip">Express.js</li>
+                        <li class="skill-chip">React</li>
+                        <li class="skill-chip">Node.js</li>
+                        <li class="skill-chip">Flask</li>
+                        <li class="skill-chip">Jinja</li>
+                    </ul>
                 </article>
-                <article class="skill-group">
-                    <h3>Databases</h3>
-                    <p>Details available on request</p>
+                <article class="skill-group" data-reveal>
+                    <h3>Databases and ORM</h3>
+                    <ul class="skill-list" aria-label="Database and ORM skills">
+                        <li class="skill-chip">MySQL</li>
+                        <li class="skill-chip">SQLite</li>
+                        <li class="skill-chip">PostgreSQL</li>
+                        <li class="skill-chip">SQLAlchemy</li>
+                        <li class="skill-chip">Relational Database Design</li>
+                        <li class="skill-chip">SQL Queries</li>
+                        <li class="skill-chip">Database Normalization</li>
+                        <li class="skill-chip">Foreign Keys and Constraints</li>
+                    </ul>
                 </article>
-                <article class="skill-group">
+                <article class="skill-group" data-reveal>
                     <h3>Data &amp; Computer Vision</h3>
-                    <p>Details available on request</p>
+                    <ul class="skill-list" aria-label="Data and computer vision skills">
+                        <li class="skill-chip">Python</li>
+                        <li class="skill-chip">Pandas</li>
+                        <li class="skill-chip">NumPy</li>
+                        <li class="skill-chip">Matplotlib</li>
+                        <li class="skill-chip">Seaborn</li>
+                        <li class="skill-chip">Plotly</li>
+                        <li class="skill-chip">Scikit-learn</li>
+                        <li class="skill-chip">Streamlit</li>
+                        <li class="skill-chip">OpenCV</li>
+                    </ul>
                 </article>
-                <article class="skill-group">
+                <article class="skill-group" data-reveal>
                     <h3>Tools &amp; Practices</h3>
-                    <p>Details available on request</p>
+                    <ul class="skill-list" aria-label="Tools and practices">
+                        <li class="skill-chip">Git</li>
+                        <li class="skill-chip">GitHub</li>
+                        <li class="skill-chip">Branch-based Development</li>
+                        <li class="skill-chip">Pull Requests</li>
+                        <li class="skill-chip">pytest</li>
+                        <li class="skill-chip">Vite</li>
+                        <li class="skill-chip">npm</li>
+                        <li class="skill-chip">VS Code</li>
+                        <li class="skill-chip">REST API Integration</li>
+                        <li class="skill-chip">Input Validation</li>
+                        <li class="skill-chip">Error Handling</li>
+                        <li class="skill-chip">Debugging</li>
+                        <li class="skill-chip">Object-Oriented Programming</li>
+                        <li class="skill-chip">CRUD Implementation</li>
+                        <li class="skill-chip">Responsive Web Design</li>
+                        <li class="skill-chip">Code Organization and Maintainability</li>
+                    </ul>
                 </article>
-                <article class="skill-group">
+                <article class="skill-group" data-reveal>
                     <h3>Cybersecurity</h3>
-                    <p>Details available on request</p>
+                    <ul class="skill-list" aria-label="Cybersecurity skills and learning topics">
+                        <li class="skill-chip">Phishing Simulation</li>
+                        <li class="skill-chip">Critical Infrastructure Protection</li>
+                        <li class="skill-chip">Secure Coding</li>
+                        <li class="skill-chip">Parameterized SQL Queries</li>
+                        <li class="skill-chip">Server-side Input Validation</li>
+                    </ul>
                 </article>
             </div>
         </section>
 
-        <section id="projects" class="section-shell" aria-labelledby="projects-title">
-            <div class="section-heading">
+        <section id="projects" class="section-shell" data-nav-section="projects" aria-labelledby="projects-title">
+            <div class="section-heading" data-reveal>
                 <p class="eyebrow">Selected work</p>
                 <h2 id="projects-title">Projects</h2>
                 <p>Practical software systems, data tools, and experiments presented with conservative project context.</p>
@@ -144,8 +206,8 @@
             <noscript><p class="project-filter-fallback">Project filters require JavaScript; all projects are shown.</p></noscript>
 
             <div id="project-list">
-                <article class="project-featured" data-project-id="devboard" data-categories="full-stack">
-                    <div class="project-featured-visual" aria-hidden="true">
+                <article class="project-featured" data-reveal data-project-id="devboard" data-categories="full-stack">
+                    <div class="project-featured-visual" data-project-visual aria-hidden="true">
                         <span class="visual-label">DEV / BOARD</span>
                         <span class="visual-line"></span>
                         <span class="visual-line visual-line-short"></span>
@@ -178,7 +240,7 @@
                 </article>
 
                 <div class="project-grid">
-                    <article class="project-card" data-project-id="crime-pattern-prediction" data-categories="data">
+                    <article class="project-card" data-reveal data-project-id="crime-pattern-prediction" data-categories="data">
                         <p class="project-label">DATA</p>
                         <h3>Crime Pattern Prediction and Visualization System</h3>
                         <p>A Streamlit system for processing crime data, exploring patterns and trends, and presenting interactive visualizations.</p>
@@ -192,7 +254,7 @@
                         </ul>
                     </article>
 
-                    <article class="project-card" data-project-id="contoso-restaurant" data-categories="desktop">
+                    <article class="project-card" data-reveal data-project-id="contoso-restaurant" data-categories="desktop">
                         <p class="project-label">DESKTOP</p>
                         <h3>Contoso Restaurant Management System</h3>
                         <p>A Windows Forms restaurant management application built with C# and MySQL.</p>
@@ -203,7 +265,7 @@
                         </ul>
                     </article>
 
-                    <article class="project-card" data-project-id="student-grade-management" data-categories="cpp">
+                    <article class="project-card" data-reveal data-project-id="student-grade-management" data-categories="cpp">
                         <p class="project-label">C++</p>
                         <h3>Student Grade Management System</h3>
                         <p>A C++ project focused on object-oriented programming and file handling.</p>
@@ -214,7 +276,7 @@
                         </ul>
                     </article>
 
-                    <article class="project-card" data-project-id="url-shortener" data-categories="desktop">
+                    <article class="project-card" data-reveal data-project-id="url-shortener" data-categories="desktop">
                         <p class="project-label">DESKTOP</p>
                         <h3>URL Shortener</h3>
                         <p>A desktop URL shortener built with Python, Tkinter, and PyShorteners.</p>
@@ -227,12 +289,12 @@
                 </div>
 
                 <div class="additional-work">
-                    <div class="section-heading section-heading-small">
+                    <div class="section-heading section-heading-small" data-reveal>
                         <p class="eyebrow">Additional work</p>
                         <h3>Experiments and practice</h3>
                     </div>
                     <div class="project-grid project-grid-compact">
-                        <article class="project-card project-card--compact" data-project-id="computer-vision-experiments" data-categories="data">
+                        <article class="project-card project-card--compact" data-reveal data-project-id="computer-vision-experiments" data-categories="data">
                             <p class="project-label">DATA</p>
                             <h3>Computer Vision Experiments</h3>
                             <p>A set of Python and OpenCV experiments for exploring computer vision workflows.</p>
@@ -241,7 +303,7 @@
                                 <li class="tech-chip">OpenCV</li>
                             </ul>
                         </article>
-                        <article class="project-card project-card--compact" data-project-id="personal-portfolio" data-categories="all">
+                        <article class="project-card project-card--compact" data-reveal data-project-id="personal-portfolio" data-categories="all">
                             <p class="project-label">PORTFOLIO</p>
                             <h3>Personal Portfolio Website</h3>
                             <p>A portfolio website built with HTML5, CSS3, JavaScript, Vite, and Three.js.</p>
@@ -258,37 +320,71 @@
             </div>
         </section>
 
-        <section id="education" class="section-shell" aria-labelledby="education-title">
-            <div class="section-heading">
+        <section id="education" class="section-shell" data-nav-section="education" aria-labelledby="education-title">
+            <div class="section-heading" data-reveal>
                 <p class="eyebrow">Background</p>
                 <h2 id="education-title">Education &amp; Certifications</h2>
             </div>
             <div class="education-layout">
-                <article class="education-entry">
-                    <p class="project-label">EDUCATION</p>
-                    <h3>BS Information Technology</h3>
+                <article class="education-card" data-reveal tabindex="0" aria-labelledby="education-card-title">
+                    <span class="education-timeline" aria-hidden="true">
+                        <span class="education-timeline__node"></span>
+                    </span>
+                    <div class="education-card__content">
+                        <h3 id="education-card-title">BS Information Technology</h3>
+                        <p class="education-institution">International Islamic University Islamabad</p>
+                        <dl class="education-facts">
+                            <div>
+                                <dt>Current standing</dt>
+                                <dd>7th semester</dd>
+                            </div>
+                            <div>
+                                <dt>Expected graduation</dt>
+                                <dd>2027</dd>
+                            </div>
+                            <div>
+                                <dt>CGPA</dt>
+                                <dd>3.74 / 4.00</dd>
+                            </div>
+                        </dl>
+                    </div>
                 </article>
-                <div>
-                    <h3 class="subsection-title">Certifications</h3>
-                    <ul class="certification-list">
-                        <li class="certification-item">OPSWAT Cybersecurity Fundamentals Associate</li>
-                        <li class="certification-item">Introduction to Critical Infrastructure Protection</li>
-                        <li class="certification-item">Mastercard Cybersecurity Job Simulation</li>
-                    </ul>
+                <div class="certification-column">
+                    <h3 id="certifications-title" class="subsection-title">Certifications</h3>
+                    <div class="certification-marquee" data-reveal tabindex="0" role="region" aria-labelledby="certifications-title">
+                        <div class="certification-marquee__viewport">
+                            <div class="certification-marquee__track">
+                                <ul class="certification-list">
+                                    <li class="certification-item">OPSWAT Cybersecurity Fundamentals Associate</li>
+                                    <li class="certification-item">Introduction to Critical Infrastructure Protection</li>
+                                    <li class="certification-item">Mastercard Cybersecurity Job Simulation</li>
+                                    <li class="certification-item">AI and Data Science Certificate <span class="certification-issuer">DigiSkills</span></li>
+                                    <li class="certification-item">MERN Stack Certificate <span class="certification-issuer">DigiSkills</span></li>
+                                </ul>
+                                <ul class="certification-list certification-list--duplicate" aria-hidden="true">
+                                    <li class="certification-item">OPSWAT Cybersecurity Fundamentals Associate</li>
+                                    <li class="certification-item">Introduction to Critical Infrastructure Protection</li>
+                                    <li class="certification-item">Mastercard Cybersecurity Job Simulation</li>
+                                    <li class="certification-item">AI and Data Science Certificate <span class="certification-issuer">DigiSkills</span></li>
+                                    <li class="certification-item">MERN Stack Certificate <span class="certification-issuer">DigiSkills</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" aria-labelledby="contact-title">
+        <section id="contact" data-nav-section="contact" aria-labelledby="contact-title">
             <div class="container">
-                <div class="info">
+                <div class="info" data-reveal>
                     <p class="eyebrow">Contact</p>
                     <h2 id="contact-title">Get In Touch</h2>
                     <p>For project questions, collaboration, or professional contact, use one of the channels below.</p>
                 </div>
 
-                <div class="grid">
-                    <a href="mailto:zali40868@gmail.com" class="card">
+                <div class="grid" data-reveal>
+                    <a href="mailto:zali40868@gmail.com" class="card" data-reveal>
                         <div class="icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
                         <div class="content">
                             <h3>Email</h3>
